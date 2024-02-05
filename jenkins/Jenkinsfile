@@ -1,0 +1,46 @@
+pipeline{
+    agent any
+    stages{
+        stage('bild-os-detail'){
+            steps{
+                sh '''
+                cat/etc/os-release
+                '''
+            
+            }
+        }        
+        stage('build-memory-details'){
+            steps{
+                sh '''
+                echo "memory details":
+                "free -m
+                '''
+            }
+        }    
+        stage('build-cpu-details'){
+            steps{
+                sh '''
+                echo "cpu details:
+                "lscpu"
+                '''
+            }
+        }          
+        stage('build-private-ip'){
+            steps{
+                sh '''
+                echo "private IP details:
+                hostname _I
+                '''
+            }
+        }      
+        stage('build-cal'){
+            steps{
+                sh '''
+                echo "build the cal:"
+                cal"
+                '''
+            }
+        }
+            
+    }   
+
