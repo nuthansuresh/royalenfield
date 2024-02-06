@@ -28,7 +28,7 @@ i free -m
             steps{
                 sh '''
                 echo "Private IP details: " 
-               ifconfig -a
+               ifconfig -I
                 '''
             }  
         }
