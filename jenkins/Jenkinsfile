@@ -12,7 +12,7 @@ pipeline{
             steps{
                 sh '''
                 echo "Memory details: "
- free -m
+i free -m
                 '''
             }
         }
@@ -28,7 +28,7 @@ pipeline{
             steps{
                 sh '''
                 echo "Private IP details: " 
-                hostname -I
+               ifconfig -a
                 '''
             }  
         }
