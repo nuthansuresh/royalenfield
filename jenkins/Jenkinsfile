@@ -4,7 +4,7 @@ pipeline{
         stage('bild-os-detail'){
             steps{
                 sh '''
-                cat/etc/os-release
+                "cat /etc/os-release"
                 '''
             }
         }        
@@ -12,7 +12,7 @@ pipeline{
             steps{
                 sh '''
                 echo "memory details":
-                "free -m
+                "free -m"
                 '''
             }
         }    
@@ -28,18 +28,18 @@ pipeline{
             steps{
                 sh '''
                 echo "private IP details:
-                hostname _I
+                "hostname -I"
                 '''
             }
         }      
         stage('build-cal'){
             steps{
                 sh '''
-                echo "build the cal:"
-                cal"
+                echo "build the cal:
+               "cal"
                 '''
             }
         }
             
     }   
-}
+  }
