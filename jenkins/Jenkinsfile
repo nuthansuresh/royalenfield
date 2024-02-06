@@ -12,7 +12,7 @@ pipeline{
             steps{
                 sh '''
                 echo "Memory details: "
-i free -m
+ free -m
                 '''
             }
         }
