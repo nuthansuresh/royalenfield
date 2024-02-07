@@ -1,45 +1,45 @@
 pipeline{
     agent any
     stages{
-        stage('bild-os-detail'){
+        stage('build-os-details'){
             steps{
                 sh '''
-                "cat /etc/os-release"
-                '''
-            }
-        }        
-        stage('build-memory-details'){
-            steps{
-                sh '''
-                echo "memory details":
-                "free -m"
-                '''
-            }
-        }    
-        stage('build-cpu-details'){
-            steps{
-                sh '''
-                echo "cpu details:
-                "lscpu"
-                '''
-            }
-        }          
-        stage('build-private-ip'){
-            steps{
-                sh '''
-                echo "private IP details:
-                "hostname -I"
-                '''
-            }
-        }      
-        stage('build-cal'){
-            steps{
-                sh '''
-                echo "build the cal:
-               "cal"
+                echo "os-details":
+                cat /etc/os-release
                 '''
             }
         }
-            
-    }   
-  }
+        stage('build-memory-details'){
+            steps{
+                sh '''
+                echo "memory-details":
+                free -mh
+                '''
+            }
+        }
+        stage('build-cpu-details'){
+            steps{
+                sh '''
+                echo "cpu-details":
+                lscpu
+                '''
+            }
+        }
+        stage('build-private-ip-details'){
+            steps{
+                sh '''
+                echo "private-ip-details":
+                hostname -I
+                '''
+            }
+        }
+        stage('build--cal-details'){
+            steps{
+                sh '''
+                echo "build-cal-details":
+                cal
+                '''
+            }
+        }
+    }
+}
